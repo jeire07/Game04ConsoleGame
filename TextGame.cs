@@ -222,7 +222,7 @@ namespace Game04MakeEverything
             int inventoryCount = _player.Inventory.Count;
             for (int i = 0; i < inventoryCount; i++)
             {
-                _player.Inventory[i].ItemInfo(true, i+1);
+                _player.Inventory[i].ItemInfo(true, i + 1);
             }
 
             WriteLine();
@@ -289,7 +289,7 @@ namespace Game04MakeEverything
             int inventoryCount = _merchant.Inventory.Count;
             for (int i = 0; i < inventoryCount; i++)
             {
-                _merchant.Inventory[i].ItemInfo(true, i+1);
+                _merchant.Inventory[i].ItemInfo(true, i + 1);
             }
 
             WriteLine();
@@ -304,10 +304,10 @@ namespace Game04MakeEverything
                     MarketScene();
                     break;
                 default:
-                    if(_player.Gold >= _merchant.Inventory[input-1].Cost)
+                    if (_player.Gold >= _merchant.Inventory[input - 1].Cost)
                     {
-                        _player.Gold -= _merchant.Inventory[input-1].Cost;
-                        _player.AddItem(_merchant.Inventory[input-1]);
+                        _player.Gold -= _merchant.Inventory[input - 1].Cost;
+                        _player.AddItem(_merchant.Inventory[input - 1]);
                         BuyScene();
                     }
                     else
@@ -333,7 +333,7 @@ namespace Game04MakeEverything
             int inventoryCount = _player.Inventory.Count;
             for (int i = 0; i < inventoryCount; i++)
             {
-                _player.Inventory[i].ItemInfo(true, i+1);
+                _player.Inventory[i].ItemInfo(true, i + 1);
             }
 
             WriteLine();
@@ -348,8 +348,8 @@ namespace Game04MakeEverything
                     MarketScene();
                     break;
                 default:
-                    _player.Gold += (int)(_player.Inventory[input-1].Cost * 0.85f);
-                    _player.SubtractItem(_player.Inventory[input-1]);
+                    _player.Gold += (int)(_player.Inventory[input - 1].Cost * 0.85f);
+                    _player.SubtractItem(_player.Inventory[input - 1]);
                     SellScene();
                     break;
             }
@@ -374,7 +374,7 @@ namespace Game04MakeEverything
                     MainScene();
                     break;
                 case 1:
-                    if(_player.Gold >= 500)
+                    if (_player.Gold >= 500)
                     {
                         _player.HP = 100;
                         _player.Gold -= 500;
