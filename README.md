@@ -34,7 +34,7 @@ C# 콘솔 기반 RPG 게임 제작
 2. 클래스 내부 method를 여러개의 클래스로 분리하여 별개 스크립트에 분리
 3. Damege를 받는 객체를 위한 Interface 작성
 4. Item을 위한 Interface 작성
-5. Scene을 위한 Interface 작성 ( 예정 )
+5. Scene을 위한 Abstract class 작성
 
 23.11.14
 1. 캐릭터 상태창 - 착용한 장비 스탯 포함 적용
