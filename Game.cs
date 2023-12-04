@@ -1,8 +1,10 @@
-﻿using static System.Console;
+﻿using Game04MakeEverything.Damagables;
+using Game04MakeEverything.Items;
+using static System.Console;
 
 namespace Game04MakeEverything
 {
-    public class MakeEverything
+    public class Game
     {
         private Character _player;
         private Character _merchant;

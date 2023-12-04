@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            MakeEverything textGame = new MakeEverything();
-            textGame.PlayText();
+            Game textGame = new Game();
         }
     }
 }
