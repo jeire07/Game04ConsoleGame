@@ -1,12 +1,11 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using Game04MakeEverything.Items;
+﻿using Game04MakeEverything.Items;
 using static System.Console;
 
-namespace Game04MakeEverything
+namespace Game04MakeEverything.Damagables
 {
     public enum Job { none, warrior, mage };  // 후기 업데이트 시 적용
 
-    public class Character
+    public class Character : IDamagable
     {
         public string Name { get; }
         public string Job { get; }
@@ -16,9 +15,10 @@ namespace Game04MakeEverything
         public int HP { get; set; }
         public int Gold { get; set; }
         public List<Item> Inventory { get; }
+        public bool IsDead { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public Character(string name, string job="인간", int level=1,
-            int atk=10, int def=5, int hp=100, int gold=1500)
+        public Character(string name, string job = "인간", int level = 1,
+            int atk = 10, int def = 5, int hp = 100, int gold = 1500)
         {
             Name = name;
             Job = job;
@@ -47,7 +47,7 @@ namespace Game04MakeEverything
 
         public void AddItem(Item item)
         {
-            if ( IsExist(item) && !item.Equipable )
+            if (IsExist(item) && !item.Equipable)
             {
                 item.Count++;
             }
@@ -60,11 +60,11 @@ namespace Game04MakeEverything
 
         public void SubtractItem(Item item)
         {
-            if ( !IsExist(item) )
+            if (!IsExist(item))
             {
                 WriteLine("없는 아이템입니다.");
             }
-            else if ( item.Count > 1 )
+            else if (item.Count > 1)
             {
                 item.Count--;
             }
@@ -88,6 +88,11 @@ namespace Game04MakeEverything
             {
                 return hp;
             }
+        }
+
+        public int Attack(IDamagable opponent)
+        {
+            return 0;
         }
     }
 }

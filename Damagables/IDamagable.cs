@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Game04MakeEverything.Damagables
 {
-    internal class Damagable
+    public interface IDamagable
     {
-    }
+        string Name { get; }
+        int Atk { get; }
+        int Def { get; }
+        int HP { get; set; }
+        int Gold { get; }
+        int Level { get; }
+        bool IsDead { get; set; }
+
+        int Attack(IDamagable opponent);
 }

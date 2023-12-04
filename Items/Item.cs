@@ -1,6 +1,6 @@
 ﻿using static System.Console;
 
-namespace Game04MakeEverything
+namespace Game04MakeEverything.Items
 {
     public enum Type { twoHand, oneHand, head, body, potion, material }
 
@@ -18,7 +18,7 @@ namespace Game04MakeEverything
         public int Count { get; set; }
 
         public Item(string name, string description, Type type,
-            int atk, int def, int hp, int gold, 
+            int atk, int def, int hp, int gold,
             bool equipable = true, bool equipped = false, int count = 1)
         {
             Name = name;
@@ -35,7 +35,7 @@ namespace Game04MakeEverything
 
         public void ItemInfo(bool withNumber = false, int idx = 0)
         {
-            if(withNumber)
+            if (withNumber)
             {
                 ForegroundColor = ConsoleColor.DarkMagenta;
                 Write($"{idx.ToString("00")} ");
