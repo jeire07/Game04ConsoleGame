@@ -7,7 +7,7 @@ namespace Game04MakeEverything.Damagables
 
     public class Character : IDamagable
     {
-        public string Name { get; }
+        public string Name { get; set; }
         public string Job { get; }
         public int Level { get; }
         public int Atk { get; }
@@ -49,7 +49,7 @@ namespace Game04MakeEverything.Damagables
         {
             if (IsExist(item) && !item.Equipable)
             {
-                item.Count++;
+                item.ItemCount++;
             }
             else
             {
@@ -64,9 +64,9 @@ namespace Game04MakeEverything.Damagables
             {
                 WriteLine("없는 아이템입니다.");
             }
-            else if (item.Count > 1)
+            else if (item.ItemCount > 1)
             {
-                item.Count--;
+                item.ItemCount--;
             }
             else
             {

@@ -17,4 +17,5 @@ namespace Game04MakeEverything.Damagables
         bool IsDead { get; set; }
 
         int Attack(IDamagable opponent);
+    }
 }
